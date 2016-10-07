@@ -74,8 +74,9 @@ text-shadow:0px 5px 5px #162647;
 }
 
 h1 span{
+margin-top : 15px;
 display: block;
-font-size: 44px;
+font-size: 32px;
 font-weight: 200;
 color: #d2e1ff;
 letter-spacing: 0;
