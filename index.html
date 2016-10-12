@@ -29,22 +29,23 @@ mixpanel.init("5e5ecfad0d31096f44738133a9333b50");</script><!-- end Mixpanel -->
 			</ul>
 		</div>
 	</div>
-	<form class="email">
-		<input type="text" class="field"
+	<form id="emailform" class="email">
+		<input type="email" required class="field"
 		       id="emailfield"
 		       onfocus="if(this.value=='Get Notified (Email Address)') this.value='';"
 		       onblur="if(this.value=='' || this.value==' ') this.value='Get Notified (Email Address)';"
 		       value="Get Notified (Email Address)" />
-		<input id="emailsubmit" type="button" class="submit" />
+		<input id="emailbutton" type="button" class="submit" />
 	</form>
 	
 </div>
 <script>
 	function onLoad() {
 		var emailfield = document.getElementById("emailfield");
-		var emailsubmit = document.getElementById("emailsubmit");
+		var emailbutton = document.getElementById("emailbutton");
+		var emailform = document.getElementById("emailform");
 	
-		emailsubmit.onclick = function() {
+		emailform.onsubmit = emailbutton.onclick = function() {
 			mixpanel.identify();
 			mixpanel.people.set({"$email": emailfield.value});
 			alert("Successfully submitted your email: " + emailfield.value);
